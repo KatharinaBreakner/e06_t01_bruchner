@@ -1,0 +1,191 @@
+/***********************************************************
+ * Storytelling WebApp
+ * 
+ * style.css
+ *
+ * Author: Lena Gieseke
+ * 
+ * Date: January 2020
+ * Update: 
+ * 
+ * Purpose: Mainly to demonstrate the usage of
+ *          express, routes and templating but
+ *          also to implement a story sharing
+ *          and story writing prompt tool.
+ *
+ * Usage: 
+ * 
+ * Notes: SOLUTION
+ *
+ *********************************************************/
+
+/* Import style rules from another style sheet */
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+/* :root for declaring global variables */
+:root {
+    --primary-color:#8a8a8a;
+    --primary-hover-color:#101010;
+}
+
+/*  '*' means for all elements  */
+* {
+    /* 
+    https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing
+    box-sizing: sets how the total width and height 
+    of an element is calculated. 
+    border-box: account for any border and padding 
+    in the values you specify.
+    */
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    color: #333;
+    background: #f4f4f4;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+/* Unordered List */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Link */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+/* When the mouse is over the link */
+a:hover {
+    color: var(--primary-hover-color);
+}
+
+/* Header */
+header {
+    font-size: 1rem;
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3rem;
+}
+
+header nav ul {
+    /* 
+    https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox
+    Set the header area to be a flexcontainer, which means that
+    items in it will all line up in a row.
+    */
+    display: flex;
+}
+
+header nav li {
+    margin: 0 1rem;
+}
+
+
+/* Main area of each site */
+.main-wrap {
+    height: 100vh;
+    width: 100%;
+    padding: 5rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-wrap h1 {
+    font-style: italic;
+}
+
+.main-text
+{
+    margin: 1.5rem;
+    text-align: center;
+    width: 80%;
+}
+
+
+  
+.small
+{
+    font-size: 1rem;
+    
+}
+.gray
+{
+    color: var(--primary-color);
+}
+
+/* .large
+{
+    font-size: 3rem;
+    margin: 0 0 1.5rem;
+    text-align: center;
+} */
+
+/* The Add buttons */
+.btn {
+    color: var(--primary-color);
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border: 0.025rem solid #d4d4d4;
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.4rem;
+}
+
+.btn:hover {
+    border: 0.035rem solid var(--primary-hover-color);
+    color: var(--primary-hover-color);
+}
+
+.btn:focus {
+    outline-width: 0.05rem;
+    outline-color:var(--primary-hover-color);
+}
+
+/* 
+To center the button on the text box
+on the 'add a story' page
+*/
+.btn-holder { 
+    text-align: center; 
+}
+
+.input {
+    font-size: 1rem;
+    padding: 0.4rem;
+    width: 100%;
+    border: 0.025rem solid #d4d4d4;
+    height: auto;
+    resize: none;
+}
+
+.input:focus {
+    outline-width: 0.05rem;
+    outline-color:var(--primary-hover-color);
+}
+
+.words {
+    margin-top: 0.5rem;
+    overflow-y: scroll; 
+    width: 80%;
+}
+
+.error {
+    margin-top: 0;
+    font-size: 1.25rem;
+    color: red;
+  }

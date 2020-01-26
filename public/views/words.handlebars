@@ -1,0 +1,26 @@
+{{!-- words.handlebars --}}
+
+<section id="main" class="main-wrap">
+
+    <h1>Give us a Word:</h1>
+
+    {{#each errors}}
+        <p class="error">{{text}}</p>
+    {{/each}}
+
+    <form action="/words" method="POST">
+        <input type="text" name="word" id="word" class="input" maxlength="24" placeholder="Your Word...">
+        <input type="submit" value="Add" class="btn">
+    </form>
+
+
+    <div class="words">
+    <p class="small gray">
+        {{#each words}}
+            {{word}}
+        {{else}}
+            <p>No words available</p>
+        {{/each}}
+    </p>
+    </div>
+</section>

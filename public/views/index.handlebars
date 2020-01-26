@@ -1,0 +1,12 @@
+{{!-- index.handlebars --}}
+
+<section id="main" class="main-wrap">
+
+    <h1>A Story For You:</h1>
+    <p class="main-text">{{story}}</p>
+    <p class="small">
+        {{#each words}}
+            {{word}}
+        {{/each}}
+    </p>
+</section>

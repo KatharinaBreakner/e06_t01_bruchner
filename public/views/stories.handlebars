@@ -1,0 +1,31 @@
+{{!-- stories.handlebars --}}
+
+<section id="main" class="main-wrap">
+
+    <h1>Tell us Your Story:</h1>
+
+    {{#each errors}}
+        <p class="error">{{text}}</p>
+    {{/each}}
+
+    <p class="small">
+        {{!-- With handlebars you can access  --}}
+        {{!-- an element in an array with the .# notation --}} 
+        You must include the words <b>{{words.0.word}}</b>, <b>{{words.1.word}}</b> and <b>{{words.2.word}}</b>.
+    </p>
+
+
+    <form action="/stories/add" method="POST">
+        <textarea rows="10" cols="100" name="story" id="story" class="input", placeholder="Your Story...">{{story}}</textarea>
+
+        {{!-- Sending also the words to save with the story. --}}
+        <input type="hidden" id="word0" name="word0" value="{{words.0._id}}">
+        <input type="hidden" id="word1" name="word1" value="{{words.1._id}}">
+        <input type="hidden" id="word2" name="word2" value="{{words.2._id}}">
+
+        <div class="btn-holder">
+            <input type="submit" value="Add" class="btn wide">
+        </div>
+    </form>
+
+</section>
